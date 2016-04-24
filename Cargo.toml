@@ -1,0 +1,14 @@
+[package]
+name = "spotsync"
+version = "0.1.0"
+authors = ["Paul Liétar <paul@lietar.net>"]
+
+[dependencies]
+env_logger      = "0.3.2"
+getopts         = "~0.2.14"
+hyper           = { version = "0.7.2", default-features = false }
+libmsntp        = { path = "libmsntp" }
+librespot       = { git = "https://github.com/plietar/librespot" }
+libc            = "0.2"
+log             = "0.3.5"
+rustc-serialize = "~0.3.16"
