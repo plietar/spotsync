@@ -93,6 +93,8 @@ fn sync_thread(player: Player, remote: &str) {
                     let diff = local_position as i64 - remote_position as i64;
                     drift = drift / 2 + diff / 2;
 
+
+                    debug!("player offset: local={} remote={} diff={} drift={}", local_position, remote_position, diff, drift);
                     if drift.abs() > 20 {
                         let seek = std::cmp::max(0, remote_position as i64) as u32;
 
@@ -100,7 +102,6 @@ fn sync_thread(player: Player, remote: &str) {
                         drift = 0;
                     }
 
-                    debug!("player offset: local={} remote={} diff={} drift={}", local_position, remote_position, diff, drift);
                 }
                 (false, false) => ()
             }
